@@ -1,11 +1,9 @@
-// req_inscrire
-
 "use strict";
 
 var fs = require("fs");
 require('remedial');
 
-var trait = function(req, res, query) {
+var trait = function (req, res, query) {
 
 	var marqueurs;
 	var pseudo;
@@ -14,19 +12,19 @@ var trait = function(req, res, query) {
 	var nouveauMembre;
 	var contenu_fichier;
 	var listeMembres;
-	var i; 
+	var i;
 	var trouve;
 
 	// ON LIT LES COMPTES EXISTANTS
 
-	contenu_fichier = fs.readFileSync("membre.json", 'utf-8');
+	contenu_fichier = fs.readFileSync("membres.json", 'utf-8');    
 	listeMembres = JSON.parse(contenu_fichier);
 
-	// ON VERIFIE QUE LE COMPTE N'EXISTE PAS DEJA 
+	// ON VERIFIE QUE LE COMPTE N'EXISTE PAS DEJA
 
 	trouve = false;
 	i = 0;
-	while(i<listeMembre.length && trouve === false) {
+	while(i<listeMembres.length && trouve === false) {
 		if(listeMembres[i].pseudo === query.pseudo) {
 			trouve = true;
 		}
@@ -46,22 +44,21 @@ var trait = function(req, res, query) {
 		fs.writeFileSync("membres.json", contenu_fichier, 'utf-8');
 	}
 
-	// ON RENVOIT UNE PAGE HTML
 
-	if(trouve === true) {
-		
-		// SI CREATION OK, ON ENVOIE PAGE DE CONFIRMATION 
+	// ON RENVOIT UNE PAGE HTML 
 
-		page = fs.readFileSync('modele_confirmation_inscription.html', 'UTF-8');
+	if(trouve === true) {
+		// SI CREATION PAS OK, ON REAFFICHE PAGE FORMULAIRE AVEC ERREUR
+
+		page = fs.readFileSync('modele_formulaire_inscription.html', 'utf-8');
 
 		marqueurs = {};
+		marqueurs.erreur = "ERREUR : ce compte existe déjà";
 		marqueurs.pseudo = query.pseudo;
-		marqueurs.password = query.password;
 		page = page.supplant(marqueurs);
 
-	}else {
-
-		//SI CREATION OK, ON ENVOIRE PAGE DE CONFIRMAION
+	} else {
+		// SI CREATION OK, ON ENVOIE PAGE DE CONFIRMATION
 
 		page = fs.readFileSync('modele_confirmation_inscription.html', 'UTF-8');
 
@@ -76,7 +73,6 @@ var trait = function(req, res, query) {
 	res.end();
 };
 
-
-//-------------
+//---------------------------------------------------------------------------
 
 module.exports = trait;
