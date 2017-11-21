@@ -5,7 +5,7 @@
 var fs = require("fs");
 require('remedial');
 
-var trait = function (req, res, ruery) {
+var trait = function (req, res, query) {
 	
 	var marqueurs;
 	var page;
