@@ -52,7 +52,7 @@ var trait = function (req, res, query) {
 		
 		//SI INDENTIFICATION OK, ON ENVOIE PAGE ACCUEIL MEMBRE
 		
-		page = fs.readFileSync('model_accueil_membre.html', 'utf-8');
+		page = fs.readFileSync('accueil_membre.html', 'utf-8');
 
 		marqueurs = {};
 		marqueurs.pseudo = query.pseudo;
