@@ -1,27 +1,29 @@
 <head>
 <meta charset="UTF-8"/>
-<h1>Bienvenue!</h1>
-<h2>Bonjour {pseudo} </h2>
+<h1>Bienvenue {pseudo} ! </h1>
+<h2>Tu es venu tester ta mémoire dans notre jeu intensif ? </h2>
 
 </head>
 
 <body>
 <h3>
-Le but est très simple nous avons un nombre de cartes<br/> spécifiques selon
-le niveau retourner face cacher sur un tableau.<br/> Le but est de
-retrouver toutes les pairs de cartes.
+Le but est très simple, nous avons des cartes posé face caché <br/>sur un tableau. <br/>
+Pour gagner il te faut retrouver toutes les pairs de cartes. Vous ne pouvez retournez que deux cartes par tours. <br/>
+Bonne chance et surtout bonne mémoire !
 </h3>
 
 </body>
 
 <p/>
 
-<form action="/req_afficher_formulaire_inscription" method="GET">
-<h4> <button name="Deconnexion" value="Deconnecter">Deconnexion</button>
-<button name="Choix de niveau" value="choix_niveau.html">Choix de niveau</button>
-</h4>
+<h6>
+<form action="/choix_niveau.html" method="GET">
+	<button name="Choix de niveau" value="choix_niveau.html">Choix de niveau</button>
+</form>
+</h6>
 
-
+<form action="/req_commencer" method="GET">
+	<button name="Deconnexion" value="Deconnecter">Deconnexion</button>
 </form>
 
 </html>
