@@ -12,7 +12,7 @@ var trait = function (req, res, query) {
 
 	//AFFICHAGE DE LA PAGE CHOIX DE NIVEAU
 
-	page = fs.readFilesSync('choix_niveau.html', 'utf-8');
+	page = fs.readFilesSync('page_choix_niveau.html', 'utf-8');
 
 	marqueurs = {};
 	maruquers.pseudo = "";

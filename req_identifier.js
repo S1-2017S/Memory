@@ -42,7 +42,7 @@ var trait = function (req, res, query) {
 
 		// SI IDENTIFICATION INCORRECT, ON REAFFICHE PAGE ACCUEIL AVEC ERREUR
 
-		page = fs.readFileSync('modele_accueil.html', 'utf-8');
+		page = fs.readFileSync('page_accueil_membres.html', 'utf-8');
 
 		marqueurs = {};
 		marqueurs.erreur = "ERREUR: compte ou mot de passe incorrect";
@@ -52,7 +52,7 @@ var trait = function (req, res, query) {
 		
 		//SI INDENTIFICATION OK, ON ENVOIE PAGE ACCUEIL MEMBRE
 		
-		page = fs.readFileSync('accueil_membre.html', 'utf-8');
+		page = fs.readFileSync('page_accueil_membres.html', 'utf-8');
 
 		marqueurs = {};
 		marqueurs.pseudo = query.pseudo;
