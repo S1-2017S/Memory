@@ -50,7 +50,7 @@ var trait = function (req, res, query) {
 	if(trouve === true) {
 		// SI CREATION PAS OK, ON REAFFICHE PAGE FORMULAIRE AVEC ERREUR
 
-		page = fs.readFileSync('modele_formulaire_inscription.html', 'utf-8');
+		page = fs.readFileSync('page_formulaire_inscription.html', 'utf-8');
 
 		marqueurs = {};
 		marqueurs.erreur = "ERREUR : ce compte existe déjà";
@@ -60,7 +60,7 @@ var trait = function (req, res, query) {
 	} else {
 		// SI CREATION OK, ON ENVOIE PAGE DE CONFIRMATION
 
-		page = fs.readFileSync('modele_confirmation_inscription.html', 'UTF-8');
+		page = fs.readFileSync('page_confirmation_inscription.html', 'UTF-8');
 
 		marqueurs = {};
 		marqueurs.pseudo = query.pseudo;
