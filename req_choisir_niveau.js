@@ -12,10 +12,10 @@ var trait = function (req, res, query) {
 
 	//AFFICHAGE DE LA PAGE CHOIX DE NIVEAU
 
-	page = fs.readFilesSync('page_choix_niveau.html', 'utf-8');
+	page = fs.readFileSync('page_choix_niveau.html', 'utf-8');
 
 	marqueurs = {};
-	marqueurs.pseudo = "";
+	marqueurs.pseudo = query.pseudo;
 	page = page.supplant(marqueurs);
 
 	res.writeHead(200, {'Content-Type': 'text/html'});

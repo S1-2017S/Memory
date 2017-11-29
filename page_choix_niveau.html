@@ -22,11 +22,10 @@ background-size: cover; /* version standardisée */
 <h3> Mode Solo / Duo
 </h3>
 
-<form action="/page_gs_facile.html" method="GET">
-    <input type="submit" value="Facile">
-</form>
+<a href="req_debuter_jeu?pseudo={pseudo}"><button>Facile</button></a>
 
 <form action="req_normal" method="GET">
+	<input type="hidden" name="pseudo" value="{pseudo}">
 	<input type="submit" value="Normal">
 </form>
 
