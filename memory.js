@@ -19,6 +19,7 @@ var req_erreur = require("./req_erreur.js");
 var req_debuter_jeu = require("./req_debuter_jeu.js");
 var req_retourner_1 = require("./req_retourner_1.js");
 var req_retourner_2 = require("./req_retourner_2.js");
+var req_abandonner = require("./req_abandonner.js");
 //-------------------------------------------------------------------------
 // FONCTION DE CALLBACK APPELLEE POUR CHAQUE REQUETE
 //-------------------------------------------------------------------------
