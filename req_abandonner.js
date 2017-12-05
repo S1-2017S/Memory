@@ -13,7 +13,7 @@ var trait = function (req, res, query) {
 	page = fs.readFileSync('page_fin_partie.html', 'utf-8');
 
 	marqueurs = {};
-	marqueurs.pseudo = "";
+	marqueurs.pseudo = query.pseudo;
 	page = page.supplant(marqueurs);
 
 
