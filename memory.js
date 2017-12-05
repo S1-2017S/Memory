@@ -16,6 +16,7 @@ var req_choisir_niveau = require("./req_choisir_niveau.js");
 
 var req_static = require("./req_static.js");
 var req_erreur = require("./req_erreur.js");
+var req_debuter_jeu = require("./req_debuter_jeu.js");
 
 //-------------------------------------------------------------------------
 // FONCTION DE CALLBACK APPELLEE POUR CHAQUE REQUETE
@@ -73,3 +74,12 @@ var mon_serveur = http.createServer(traite_requete);
 var port = 5000;
 console.log("Serveur en ecoute sur port " + port);
 mon_serveur.listen(port);
+
+
+
+
+
+
+
+
+
