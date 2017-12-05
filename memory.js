@@ -17,7 +17,8 @@ var req_choisir_niveau = require("./req_choisir_niveau.js");
 var req_static = require("./req_static.js");
 var req_erreur = require("./req_erreur.js");
 var req_debuter_jeu = require("./req_debuter_jeu.js");
-
+var req_retourner_1 = require("./req_retourner_1.js");
+var req_retourner_2 = require("./req_retourner_2.js");
 //-------------------------------------------------------------------------
 // FONCTION DE CALLBACK APPELLEE POUR CHAQUE REQUETE
 //-------------------------------------------------------------------------
@@ -54,6 +55,18 @@ var traite_requete = function (req, res) {
 			case '/req_choisir_niveau':
 				req_choisir_niveau(req, res, query);
 				break;
+			case '/req_debuter_jeu':
+				req_debuter_jeu(req, res, query);
+				break;
+			case '/req_retourner_1':
+				req_retourner_1(req, res, query);
+				break
+			case '/req_retourner_2':
+				req_retourner_2(req, res, query);
+				break
+			case '/req_abandonner':
+				req_abandonner(req, res, query);
+				break
 			default:
 				req_static(req, res, query);
 				break;
