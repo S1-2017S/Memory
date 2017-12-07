@@ -20,6 +20,12 @@ var req_debuter_jeu = require("./req_debuter_jeu.js");
 var req_retourner_1 = require("./req_retourner_1.js");
 var req_retourner_2 = require("./req_retourner_2.js");
 var req_abandonner = require("./req_abandonner.js");
+var req_retour_accueil = require("./req_retour_accueil.js");
+var req_continuer = require("./req_continuer.js");
+var req_rejouer = require("./req_rejouer.js");
+
+
+
 //-------------------------------------------------------------------------
 // FONCTION DE CALLBACK APPELLEE POUR CHAQUE REQUETE
 //-------------------------------------------------------------------------
@@ -67,6 +73,15 @@ var traite_requete = function (req, res) {
 				break
 			case '/req_abandonner':
 				req_abandonner(req, res, query);
+				break
+			case '/req_retour_accueil':
+				req_retour_accueil(req, res, query);
+				break
+			case '/req_continuer':
+				req_continuer(req, res, query);
+				break
+			case '/req_rejouer':
+				req_rejouer(req, res, query);
 				break
 			default:
 				req_static(req, res, query);
