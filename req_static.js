@@ -19,7 +19,7 @@ var get_static = function (req, res, query) {
 	file = __dirname + file;
 
 	// AJUSTE LE TYPE EN FONCTION DE L'EXTENSION
-
+	
 	var extname = path.extname(file);
 	if(extname === ".html") {
 		type = 'text';
