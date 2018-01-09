@@ -5,23 +5,26 @@
 <meta charset="UTF-8"/>
 <h1>Créer votre grille</h1>
 </head>
+
+<form action="/req_verifier" method="GET">
 <table id="tapis">
 <p>
 <tr>
-	<td><TEXTAREA name="{00}" rows=4 cols=40>nom image 1</TEXTAREA></td>
-	<td><TEXTAREA name="{01}" rows=4 cols=40>nom image 2</TEXTAREA></td>
-	<td><TEXTAREA name="{02}" rows=4 cols=40>nom image 3</TEXTAREA></td>
-	<td><TEXTAREA name="{03}" rows=4 cols=40>nom image 4</TEXTAREA></td>
+	<td><input type="text" name="00" value=".jpg"></td>
+	<td><input type="text" name="01" value=".jpg"></td>
+	<td><input type="text" name="02" value=".jpg"></td>
+	<td><input type="text" name="03" value=".jpg"></td>
 </tr>
 </p>
 <p>
 <tr>
-	<td><TEXTAREA name="{10}" rows=4 cols=40>nom image 5</TEXTAREA></td>
-	<td><TEXTAREA name="{11}" rows=4 cols=40>nom image 6</TEXTAREA></td>
-	<td><TEXTAREA name="{12}" rows=4 cols=40>nom image 7</TEXTAREA></td>
-	<td><TEXTAREA name="{13}" rows=4 cols=40>nom image 8</TEXTAREA></td>
-</tr
+	<td><input type="text" name="10" value=".jpg"></td>
+    <td><input type="text" name="11" value=".jpg"></td>
+	<td><input type="text" name="12" value=".jpg"></td>
+	<td><input type="text" name="13" value=".jpg"></td>
+</tr>
 </p>
+</form>
 </table>
 
 <a href="req_verifier"><button>VERIFIER</button></a>
