@@ -17,14 +17,14 @@ var trait = function (req, res, query) {
 	var contenu;
 
 
-//ON RECUPERE LA LIGNE ET LA COLONNE 
-	
+	//ON RECUPERE LA LIGNE ET LA COLONNE 
+
 	jeu = fs.readFileSync(query.pseudo + ".json", contenu, "utf-8");
 	jeu = JSON.parse(jeu);
 	l = Math.floor(query.caze/10)
-	c = query.caze-(10 * [l]);
+		c = query.caze-(10 * [l]);
 
-	
+
 	jeu.visible[l][c] = 1;
 
 
@@ -41,7 +41,10 @@ var trait = function (req, res, query) {
 				marqueurs_tab[String(l) + String(c)] = "img/back.png";
 			} else if(jeu.visible[l][c] === 1) {
 				marqueurs_tab[String(l) + String(c)] ="img/" + jeu.images[l][c];
+			} else if(jeu.visible[l][c] === 2) {
+				marqueurs_tab[String(l) + String(c)] ="img/" + jeu.images[l][c];
 			}
+
 		}
 	}
 	page = page.supplant(marqueurs_tab);

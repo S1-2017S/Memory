@@ -7,11 +7,14 @@ var fs = require("fs");
 require('remedial');
 
 var trait = function (req, res, query) {
-	
+
 	var marqueurs;
 	var page;
 	var jeu;
 	var contenu;
+	var marqueurs_tab;
+	var l;
+	var c;
 
 	// CREATION DE LA GRILLE ET NOM DES IMAGES
 
@@ -27,7 +30,7 @@ var trait = function (req, res, query) {
 	};
 
 	contenu = JSON.stringify(jeu);
-	
+
 	fs.writeFileSync(query.pseudo + ".json", contenu, "utf-8");
 	page = fs.readFileSync('page_gs_facile.html', 'utf-8');
 
@@ -41,9 +44,24 @@ var trait = function (req, res, query) {
 	marqueurs["11"] = "img/back.png";
 	marqueurs["12"] = "img/back.png";
 
+	marqueurs_tab = {};
+	for(l = 0; l < 2; l++) {
+		for(c = 0; c < 3; c++){
+			if(jeu.visible[l][c] === 0) {
+				marqueurs_tab[String(l) + String(c)] = "img/back.png";
+			} else if(jeu.visible[l][c] === 1) {
+				marqueurs_tab[String(l) + String(c)] ="img/" + jeu.images[l][c];
+			} else if(jeu.visible[l][c] === 2) {
+				marqueurs_tab[String(l) + String(c)] ="img/" + jeu.images[l][c];
+			}
+
+		}
+	}
+
+
 	page = page.supplant(marqueurs);
 
-	
+
 	res.writeHead(200, {'Content-Type': 'text/html'});
 	res.write(page);
 	res.end();
@@ -51,4 +69,4 @@ var trait = function (req, res, query) {
 
 //--------------
 module.exports = trait;
-	
+
