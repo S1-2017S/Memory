@@ -23,6 +23,10 @@ var trait = function (req, res, query) {
 	listeMembres = JSON.parse(contenu_fichier);
 
 	// ON VERIFIE QUE LE PSEUDO/PASSWORD EXISTE
+	
+	    for(i = 0;i < Number.MAX_VALUE; i++){
+				    }
+
 
 	trouve = false; 
 	i = 0;
