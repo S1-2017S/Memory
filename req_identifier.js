@@ -24,10 +24,6 @@ var trait = function (req, res, query) {
 
 	// ON VERIFIE QUE LE PSEUDO/PASSWORD EXISTE
 	
-	    for(i = 0;i < Number.MAX_VALUE; i++){
-				    }
-
-
 	trouve = false; 
 	i = 0;
 	while(i<listeMembres.length && trouve === false) {
