@@ -12,34 +12,37 @@ var trait = function (req, res, query) {
 	var grille;
 	var contenu;
 
-grille = {
+	// CREATION DE LA GRILLE//
+
+	grille = {
 		"images" : [
-			["00", "01", "02", "03"],
-			["10", "11", "12", "13"],
-		],
-};
+			["/img/"+query.C00, "/img/"+query.C01, "/img/"+query.C02, "/img/"+query.C03],
+			["/img/"+query.C10, "/img/"+query.C11, "/img/"+query.C12, "/img/"+query.C13],
+		]
+	};
+	contenu = JSON.stringify(grille);
+	fs.writeFileSync("./Les_Grilles/grille_T.json", contenu, "utf-8")
 
-contenu= JSON.stringify(grille);
+	console.log(contenu);
 
-fs.writeFileSync
-page = fs.readFileSync('page_verifier_grille.html', 'utf-8');
+	page = fs.readFileSync('page_verifier_grille.html', 'utf-8');
 
-marqueurs = {};
+	marqueurs = {};
 
-marqueurs["00"] = "./img/.jpg";
-marqueurs["01"] = "./img/.jpg";
-marqueurs["02"] = "./img/.jpg";
-marqueurs["03"] = "./img/.jpg";
-marqueurs["10"] = "./img/.jpg";
-marqueurs["11"] = "./img/.jpg";
-marqueurs["12"] = "./img/.jpg";
-marqueurs["13"] = "./img/.jpg";
+	marqueurs["C00"] = "/img/"+query.C00;
+	marqueurs["C01"] = "/img/"+query.C01;
+	marqueurs["C02"] = "/img/"+query.C02;
+	marqueurs["C03"] = "/img/"+query.C03;
+	marqueurs["C10"] = "/img/"+query.C10;
+	marqueurs["C11"] = "/img/"+query.C11;
+	marqueurs["C12"] = "/img/"+query.C12;
+	marqueurs["C13"] = "/img/"+query.C13;
 
-page = page.supplant(marqueurs);
+	page = page.supplant(marqueurs);
 
-res.writeHead(200, {'Content_Type': 'text/html'});
-res.write(page);
-res.end();
+	res.writeHead(200, {'Content_Type': 'text/html'});
+	res.write(page);
+	res.end();
 };
 
 //----------------
