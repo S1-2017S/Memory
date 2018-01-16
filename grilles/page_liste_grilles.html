@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html>
 
-	<head>
-		<title>Liste grilles</title>
-		<meta http-equiv='Content-Type' content='text/html;charset=utf-8' />
-	</head>
+<head>
+	<title>Liste grilles</title>
+	<meta http-equiv='Content-Type' content='text/html;charset=utf-8' />
+</head>
 
-	<h3>Liste des grilles du jeu Memory<h3>
+<h3>Liste des grilles du jeu Memory<h3><br/>
 
-	<p/>
-		
-	<a href="req_creer_grille"><button>Créer une  grille</button></a href>
+	<form action="req_verifier_grille" method="GET">
+	<select name="Grilles">
+	<option value="./Les_Grilles/Grille1">grille 1</option>   
+	<option value="">grille 2</option>
+	<option value="">grille 3</option>
+	<select>
+<p>
+<input type="submit" name="bouton" value="Modifier">
+</form>
+
+<p/>
+
+<h3>Créer une grille:<h3>
+
+<form action="req_creer_grille" method="GET">
+	<input type="radio" name="niveau" value="facile">Niveau facile<br>
+	<input type="radio" name="niveau" value="normal">Niveau normal<br>
+	<input type="radio" name="niveau" value="difficile">Niveau difficile<p>
+	<input type="submit" name="bouton" value="Creer la grille" onClick= Creer_la_grille()>
+
+</form>
 

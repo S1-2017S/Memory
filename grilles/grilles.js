@@ -13,7 +13,9 @@ var querystring = require("querystring");
 var req_commencer2 = require("./req_commencer2.js");
 var req_creer_grille = require("./req_creer_grille.js");
 var req_modifier_grille = require("./req_modifier_grille.js");
-var req_verifier_grille = require("./req_verifier_grille.js");
+var req_verifier_grille1 = require("./req_verifier_grille1.js");
+var req_verifier_grille2 = require("./req_verifier_grille2.js");
+var req_verifier_grille3 = require("./req_verifier_grille3.js");
 var req_enregistrer_grille = require("./req_enregistrer_grille.js");
 var req_retourner_accueil = require("./req_retourner_accueil.js");
 
@@ -47,21 +49,29 @@ var traite_requete = function (req, res) {
 				req_creer_grille(req, res, query);
 				break
 			case '/req_modifier_grille':
-				req_modifier_grille(req, res, query);
-				break
-			case '/req_verifier_grille':
-				req_verifier_grille(req, res, query);
-				break
+					req_modifier_grille(req, res, query);
+					break
+			case '/req_verifier_grille1':
+						req_verifier_grille1(req, res, query);
+						break
+
+			case '/req_verifier_grille2':
+							req_verifier_grille2(req, res, query);
+							break
+			case '/req_verifier_grille3':
+								req_verifier_grille3(req, res, query);
+								break
+
 			case '/req_enregistrer_grille':
-				req_enregistrer_grille(req, res, query);
-				break
+									req_enregistrer_grille(req, res, query);
+									break
 			case '/req_retourner_accueil':
-				req_retourner_accueil(req, res, query);
-				break
+										req_retourner_accueil(req, res, query);
+										break
 
 			default:
-				req_static(req, res, query);
-				break;
+											req_static(req, res, query);
+											break;
 		}
 	} catch (e) {
 		console.log('Erreur : ' + e.stack);
