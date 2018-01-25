@@ -1,4 +1,9 @@
-// req retourner 1 
+//================================================
+// req_retourner_1.js
+// Requete retournant la premiere carte
+// Auteur: Hugo DAFFIS
+// Date: 22/12/2017
+//================================================
 
 "use strict";
 
@@ -17,10 +22,13 @@ var trait = function (req, res, query) {
 	var contenu;
 
 
-	//ON RECUPERE LA LIGNE ET LA COLONNE 
-
 	jeu = fs.readFileSync(query.pseudo + ".json", contenu, "utf-8");
 	jeu = JSON.parse(jeu);
+
+//------------------------------------------------------------
+//ON RECUPERE LA LIGNE ET LA COLONNE 
+//------------------------------------------------------------
+
 	l = Math.floor(query.caze/10)
 		c = query.caze-(10 * [l]);
 
@@ -29,11 +37,15 @@ var trait = function (req, res, query) {
 
 
 	contenu = JSON.stringify(jeu);
-	console.log(jeu);
-	console.log(contenu);
 	page = fs.readFileSync('page_gi_facile.html', 'utf-8');
 	fs.writeFileSync(query.pseudo + ".json", contenu, "utf-8");
 
+
+//------------------------------------------------------------
+//ON MET L'IMAGE CORRESPONDANTE SELON LA VALEUR DE LA CARTE 
+//------------------------------------------------------------
+	
+	
 	marqueurs_tab = {};
 	for(l = 0; l < 2; l++) {
 		for(c = 0; c < 3; c++){
