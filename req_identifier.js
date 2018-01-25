@@ -19,7 +19,7 @@ var trait = function (req, res, query) {
 
 	// ON LIT LES COMPTES EXISTANTS
 
-	contenu_fichier = fs.readFileSync("membres.json", 'utf-8');
+	contenu_fichier = fs.readFileSync("./fichiers_json/"+"membres.json", 'utf-8');
 	listeMembres = JSON.parse(contenu_fichier);
 
 	// ON VERIFIE QUE LE PSEUDO/PASSWORD EXISTE

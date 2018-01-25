@@ -22,7 +22,7 @@ var trait = function (req, res, query) {
 	var contenu;
 
 
-	jeu = fs.readFileSync(query.pseudo + ".json", contenu, "utf-8");
+	jeu = fs.readFileSync("./fichiers_json/"+query.pseudo + ".json", contenu, "utf-8");
 	jeu = JSON.parse(jeu);
 
 //------------------------------------------------------------
@@ -38,7 +38,7 @@ var trait = function (req, res, query) {
 
 	contenu = JSON.stringify(jeu);
 	page = fs.readFileSync('page_gi_facile.html', 'utf-8');
-	fs.writeFileSync(query.pseudo + ".json", contenu, "utf-8");
+	fs.writeFileSync("./fichiers_json/"+query.pseudo + ".json", contenu, "utf-8");
 
 
 //------------------------------------------------------------

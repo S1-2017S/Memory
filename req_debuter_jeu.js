@@ -33,7 +33,7 @@ var trait = function (req, res, query) {
 
 	contenu = JSON.stringify(jeu);
 
-	fs.writeFileSync(query.pseudo + ".json", contenu, "utf-8");
+	fs.writeFileSync("./fichiers_json/"+query.pseudo + ".json", contenu, "utf-8");
 	page = fs.readFileSync('page_gs_facile.html', 'utf-8');
 
 	marqueurs = {};

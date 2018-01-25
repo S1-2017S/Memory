@@ -1,4 +1,4 @@
-// req_enregistrer_grille
+// req enregistrer grille facile
 
 "use strict";
 
@@ -11,8 +11,8 @@ var trait = function (req, res, query) {
 	var page;
 	var contenu;
 
-contenu = fs.readFileSync("./Les_Grilles/grille_T.json", "utf-8")
-fs.writeFileSync("./Les_Grilles/" +query.nom +".json", contenu, "utf-8")
+contenu = fs.readFileSync("./Les_Grilles/grille_facile/grille_T1.json", "utf-8")
+fs.writeFileSync("./Les_Grilles/grille_facile/" +query.nom +".json", contenu, "utf-8")
 
 page = fs.readFileSync('page_liste_grilles.html', 'utf-8');
 res.writeHead(200, {'Content-Type': 'text/html' });

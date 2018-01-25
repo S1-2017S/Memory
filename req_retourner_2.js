@@ -19,7 +19,7 @@ var trait = function (req, res, query) {
 
 	//ON RECUPERE LA LIGNE ET LA COLONNE 
 
-	jeu = fs.readFileSync(query.pseudo + ".json", contenu, "utf-8");
+	jeu = fs.readFileSync("./fichiers_json/"+query.pseudo + ".json", contenu, "utf-8");
 	jeu = JSON.parse(jeu);
 	l = Math.floor(query.caze/10)
 	c = query.caze-(10 * [l]);
@@ -29,10 +29,8 @@ var trait = function (req, res, query) {
 
 
 	contenu = JSON.stringify(jeu);
-	console.log(jeu);
-	console.log(contenu);
 	page = fs.readFileSync('page_gp_facile.html', 'utf-8');
-	fs.writeFileSync(query.pseudo + ".json", contenu, "utf-8");
+	fs.writeFileSync("./fichiers_json/"+query.pseudo + ".json", contenu, "utf-8");
 	
 	marqueurs_tab = {};
 	for(l = 0; l < 2; l++) {

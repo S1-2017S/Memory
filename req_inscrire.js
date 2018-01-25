@@ -17,7 +17,7 @@ var trait = function (req, res, query) {
 
 	// ON LIT LES COMPTES EXISTANTS
 
-	contenu_fichier = fs.readFileSync("membres.json", 'utf-8');    
+	contenu_fichier = fs.readFileSync("./fichiers_json/"+"membres.json", 'utf-8');    
 	listeMembres = JSON.parse(contenu_fichier);
 
 	// ON VERIFIE QUE LE COMPTE N'EXISTE PAS DEJA
@@ -41,7 +41,7 @@ var trait = function (req, res, query) {
 
 		contenu_fichier = JSON.stringify(listeMembres);
 
-		fs.writeFileSync("membres.json", contenu_fichier, 'utf-8');
+		fs.writeFileSync("./fichiers_json/"+"membres.json", contenu_fichier, 'utf-8');
 	}
 
 

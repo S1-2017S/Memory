@@ -19,7 +19,7 @@ var trait = function (req, res, query) {
 	var marqueurs_tab;
 	var victoire;
 
-	contenu = fs.readFileSync(query.pseudo + ".json", "utf-8");
+	contenu = fs.readFileSync("./fichiers_json/"+query.pseudo + ".json", "utf-8");
 	jeu = JSON.parse(contenu);
 
 	// RECHERCHE EMPLACEMENT DES 2 CARTES TEMPORAIREMENT RETOURNER
@@ -49,7 +49,7 @@ var trait = function (req, res, query) {
 	}
 
 	contenu = JSON.stringify(jeu);
-	fs.writeFileSync(query.pseudo + ".json", contenu, "utf-8");
+	fs.writeFileSync("./fichiers_json/"+query.pseudo + ".json", contenu, "utf-8");
 
 	marqueurs_tab = {};
 	for(l = 0; l < 2; l++) {

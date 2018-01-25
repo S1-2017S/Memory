@@ -19,7 +19,7 @@ var trait = function (req, res, query) {
 		]
 	};
 	contenu = JSON.stringify(grille);
-	fs.writeFileSync("./Les_Grilles/grille_T1.json", contenu, "utf-8")
+	fs.writeFileSync("./Les_Grilles/grille_facile/grille_T1.json", contenu, "utf-8")
 
 		console.log(contenu);
 
