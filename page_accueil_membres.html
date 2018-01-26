@@ -1,30 +1,37 @@
+<!DOCTYPE html>
+<html>
 <head>
-<meta charset="UTF-8"/>
-<h1>Bienvenue {pseudo} ! </h1>
-<h2>Es-tu venu tester ta mémoire dans notre jeu intensif ? </h2>
 
+<style>
+body{
+margin:0;
+padding:0;
+background: url(/img/fond-bois.jpg) no-repeat center fixed;
+			-webkit-background-size: cover; /* pour Chrome et Safari */
+			-moz-background-size: cover; /* pour Firefox */
+			-o-background-size: cover; /* pour Opera */
+			background-size: cover; /* version standardisée */
+}
+</style>
+
+
+<meta charset="UTF-8"/>
+<h1 align="center">Bienvenue {pseudo} ! </h1>
 </head>
 
 
 
 <body>
-<h3>
+<h2 align="center">
 Le but est très simple, nous avons des cartes posées face caché <br/>sur un tableau. <br/>
-Pour gagner il te faut retrouver toutes les paires de cartes. Vous ne pouvez retourner que deux cartes par tours. <br/>
-Bonne chance et surtout bonne mémoire !
-</h3>
+Pour gagner il te faut retrouver toutes les paires de cartes.<br/> Vous ne pouvez retourner que deux cartes par tours. <br/>
+Bonne chance et surtout amusez vous !
+</br>
+</br>
+<a href="/req_choisir_niveau?pseudo={pseudo}"><button>Choisir niveau</button></a>
+</br>
+<a href="/req_commencer?pseudo={pseudo}"><button>Deconnexion</button></a>
+</h2>
 
-</body>
-
-<p/>
-
-<h6>
-<a href="/req_choisir_niveau?pseudo={pseudo}"><button>Choisir niveau</button</a>
-</form>
-</h6>
-
-<a href="/req_commencer?pseudo={pseudo}"><button>Deconnexion</button</a>
-
-</form>
-
+<body>
 </html>

@@ -2,29 +2,35 @@
 <html>
 
 <head>
-	<meta charset="UTF-8"/>
-	<center><h1>Modes de jeux</h1></center>
+
+<style>
+body{
+margin:0;
+padding:0;
+background: url(/img/fond-bois.jpg) no-repeat center fixed;
+			-webkit-background-size: cover; /* pour Chrome et Safari */
+			-moz-background-size: cover; /* pour Firefox */
+			-o-background-size: cover; /* pour Opera */
+			background-size: cover; /* version standardisée */
+}
+</style>
+
+
+<meta charset="UTF-8"/>
+<center><h1>Choisissez le niveau</h1></center>
 </head>
 
 
 <body>
-<h3> Mode Solo / Duo
-</h3>
 
+<h2 align="center">
 <a href="req_debuter_jeu?pseudo={pseudo}"><button>Facile</button></a>
+<br>
+<br>
+<a href=""><button>Normal</button></a>
+<br>
+<br>
+<a href=""><button>Difficile</button></a>
+</h2>
 
-<form action="req_normal" method="GET">
-	<input type="hidden" name="pseudo" value="{pseudo}">
-	<input type="submit" value="Normal">
-</form>
-
-<form action="req_difficile" method="GET">
-	<input type="submit" value="Difficile">
-</form>
-
-<form action="req_Duo" method="GET">
-	<input type="submit" value="Duo">
-</form>
-
-
-
+</html>

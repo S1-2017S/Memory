@@ -1,26 +1,39 @@
 <!DOCTYPE html>
 <html>
+<head>
+
+<style>
+body{
+margin:0;
+padding:0;
+background: url(/img/fond-bois.jpg) no-repeat center fixed;
+			-webkit-background-size: cover; /* pour Chrome et Safari */
+			-moz-background-size: cover; /* pour Firefox */
+			-o-background-size: cover; /* pour Opera */
+			background-size: cover; /* version standardisée */
+}
+</style>
 
 <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
 
-<h2>Jeu du Memory<h2>
+<h1 align="center">Jeu du Memory</h1>
 {erreur}
-
+</head>
 <p/>
-
+<h2 align="center">
 <form action="/req_identifier" method="GET"> 
-	<input type="text" name="pseudo" value="{pseudo}"> 
-	<br/>
-	<input type="text" name="password" value="">
-	<br/>
-	<input type="submit" name="action" value="Se connecter">
+<input type="text" name="pseudo" value="{pseudo}"> 
+<br/>
+<input type="text" name="password" value="">
+<br/>
+<input type="submit" name="action" value="Se connecter">
 </form>
-
+</h2>
 <p/>
-
+<h2 align="center">
 <form action="/req_afficher_formulaire_inscription" method="GET">
-	<button name="action" value="creer">Créer compte</button>
+<button name="action" value="creer">Créer compte</button>
 </form>
-
+</h2>
 </html>
 
